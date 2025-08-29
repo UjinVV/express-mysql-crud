@@ -64,7 +64,7 @@ app.put("/users/:id", (req, res) => {
   db.query(sql, [name, email, password, req.params.id], (err, result) => {
     if (err) return res.status(500).json({ message: "DB 오류" });
     if (result.affectedRows === 0) return res.status(404).json({ message: "사용자를 찾을 수 없습니다." });
-    res.json({ message: "회원 정보 수정 완료" });
+    res.json({ message: "회원 정보 수정 완료." });
   });
 });
 
@@ -75,7 +75,7 @@ app.delete("/users/:id", (req, res) => {
   db.query(sql, [req.params.id], (err, result) => {
     if (err) return res.status(500).json({ message: "DB 오류" });
     if (result.affectedRows === 0) return res.status(404).json({ message: "사용자를 찾을 수 없습니다." });
-    res.json({ message: "회원 삭제 완료" });
+    res.json({ message: "회원 삭제 완료." });
   });
 });
 
